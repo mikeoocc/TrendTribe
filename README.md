@@ -18,10 +18,13 @@ En adición a las anteriores funciones, el código mostrado también cumplirá c
 * Gestión del inventario de cada producto.
 * Almacenamiento de la información de los usuarios y sus pedidos.
 
+
 #### Diagrama UML de clases preliminar:
 
 ![UML DIAGRAM](https://github.com/Javotass/TrendTribe/assets/109975652/bf80cea2-f601-4e53-a4f7-035ebe01577f)
 
 
 #### Boceto de la página principal: 
+
+![BOCETO](https://github.com/Javotass/TrendTribe/assets/109975652/f3c72c84-0d64-4905-9533-0664b19ea141)
 
