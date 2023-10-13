@@ -20,5 +20,8 @@ En adición a las anteriores funciones, el código mostrado también cumplirá c
 
 #### Diagrama UML de clases preliminar:
 
+![UML DIAGRAM](https://github.com/Javotass/TrendTribe/assets/109975652/bf80cea2-f601-4e53-a4f7-035ebe01577f)
+
+
 #### Boceto de la página principal: 
 
