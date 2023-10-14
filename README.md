@@ -14,7 +14,7 @@ La aplicación es una plataforma de comercio electrónico que permitirá:
 
 En adición a las anteriores funciones, el código mostrado también cumplirá con lo siguiente:
 
-* Gestión de compra y envio de los pedidos realizados por los usuarios.
+* Gestión de compra y envío de los pedidos realizados por los usuarios.
 * Gestión del inventario de cada producto.
 * Almacenamiento de la información de los usuarios y sus pedidos.
 
