@@ -1,7 +1,7 @@
 # TrendTribe
 
 #### Integrantes:
-Javier Revilla y Miguel Oliver.
+Javier Revilla Sáez y Miguel Oliver Cascales.
 
 #### Funcionalidad:
 La aplicación es una plataforma de comercio electrónico que permitirá:
