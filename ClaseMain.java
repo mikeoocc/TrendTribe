@@ -18,11 +18,15 @@ public class ClaseMain {
 		System.out.print("Buscador: ");
 		buscador = scanner.next();
 		
-		productosEncontrados = catalogo.buscarProductos(buscador, buscador);
+		productosEncontrados = catalogo.buscarProductos(buscador);
 		
-				
-		for(Producto proc:productosEncontrados) {
-			System.out.println("Nombre: " + proc.getNombre());
+		if(productosEncontrados.size()==0) {
+			System.out.print("No se ha encontrado ese producto. . .");
+		}
+		else {
+			for(Producto proc:productosEncontrados) {
+				System.out.println("Nombre: " + proc.getNombre());
+			}
 		}
 		
 	}
