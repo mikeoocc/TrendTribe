@@ -26,13 +26,13 @@ public class Catalogo {
 		 
 		 ArrayList<Producto> productosEncontrados = new ArrayList<>();
 		 
-		    for (Producto producto : listaProductos) {
-		        if (cumpleCriterios(producto, filtro)) {
-		            productosEncontrados.add(producto);
+		 for (Producto producto : listaProductos) {
+		 	if (cumpleCriterios(producto, filtro)) {
+		         	productosEncontrados.add(producto);
 		        }
-		    }
+		  }
 		    
-		    return productosEncontrados;
+		  return productosEncontrados;
 		 
 	 }
 	 
