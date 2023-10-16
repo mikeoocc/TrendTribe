@@ -18,16 +18,16 @@ public class Catalogo {
 	 * Recorre un vector de productos y comprueba con la funcion cumpleCriterios() si lo que busca
 	 * el usuario se encuentra dentro de dicho vector. Si lo encuentra mete el producto dentro de
 	 * otro vector. Al final, este ultimo vector se retorna.
-	 * @param tipo
-	 * @param nombre
+	 * @param filtro
 	 * @return devuelve los productos encontrados
 	 */
-	 public ArrayList<Producto> buscarProductos(String tipo, String nombre){
+	 
+	public ArrayList<Producto> buscarProductos(String filtro){
 		 
 		 ArrayList<Producto> productosEncontrados = new ArrayList<>();
 		 
 		    for (Producto producto : listaProductos) {
-		        if (cumpleCriterios(producto, tipo, nombre)) {
+		        if (cumpleCriterios(producto, filtro)) {
 		            productosEncontrados.add(producto);
 		        }
 		    }
@@ -36,24 +36,22 @@ public class Catalogo {
 		 
 	 }
 	 
-	 /**
-	  * La funcion toma como parametros el tipo y el nombre del producto a buscar, y un producto
-	  * del vector de la funcion buscarProductos(). cumpleCriterios() comprueba si lo que quiere
-	  * buscar el usuario coincide con alguno de los productos dentro del vector mencionado.
-	  * 
-	  * @param producto
-	  * @param tipo
-	  * @param nombre
-	  * @return devuelve si cumpleTipo o nombre
-	  */
-	 
-	 private boolean cumpleCriterios(Producto producto, String tipo, String nombre) {
-		 boolean cumpleTipo = tipo == null || tipo.isEmpty() || producto.getTipo().equalsIgnoreCase(tipo);
-		 boolean cumpleNombre = nombre == null || nombre.isEmpty() || producto.getNombre().equalsIgnoreCase(nombre);
-		 return cumpleTipo || cumpleNombre;
+	/**
+	 * La funcion toma como parametros una variable para filtrar y un producto del vector
+	 * en buscarProductos(). cumpleCriterios() comprueba si lo que quiere buscar el usuario
+	 * coincide con alguno de los productos dentro del vector mencionado.
+	 * 
+	 * @param producto
+	 * @param filtro
+	 * @return
+	 */
+
+	 private boolean cumpleCriterios(Producto producto, String filtro) {
+		    boolean cumpleNombre = producto.getNombre().equalsIgnoreCase(filtro);
+		    boolean cumpleTipo = producto.getTipo().equalsIgnoreCase(filtro);
+		    return cumpleNombre || cumpleTipo;
 	 }
 
-	
 	/*
 	 * añadirProducto();
 	 * eliminarProducto();
