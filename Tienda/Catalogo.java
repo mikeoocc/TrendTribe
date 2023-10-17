@@ -47,9 +47,10 @@ public class Catalogo {
 	 */
 
 	 private boolean cumpleCriterios(Producto producto, String filtro) {
-		    boolean cumpleNombre = producto.getNombre().equalsIgnoreCase(filtro);
-		    boolean cumpleTipo = producto.getTipo().equalsIgnoreCase(filtro);
-		    return cumpleNombre || cumpleTipo;
+		 
+		 boolean cumpleNombre = producto.getNombre().equalsIgnoreCase(filtro);
+		 boolean cumpleTipo = producto.getTipo().equalsIgnoreCase(filtro);
+		 return cumpleNombre || cumpleTipo;
 	 }
 
 	/*
