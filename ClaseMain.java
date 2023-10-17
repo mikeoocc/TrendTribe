@@ -14,9 +14,13 @@ public class ClaseMain {
 		String buscador;
 		
 		ArrayList<Producto> productosEncontrados = new ArrayList<Producto>();
-		
-		System.out.print("Buscador: ");
+				
+		System.out.println();
+
+		System.out.print(" Buscador: ");
 		buscador = scanner.next();
+		
+		System.out.println();
 		
 		productosEncontrados = catalogo.buscarProductos(buscador);
 		
@@ -25,7 +29,7 @@ public class ClaseMain {
 		}
 		else {
 			for(Producto proc:productosEncontrados) {
-				System.out.println("Nombre: " + proc.getNombre());
+				System.out.println(" - " + proc.getNombre() + ": " + proc.getPrecio() + " €");
 			}
 		}
 		
