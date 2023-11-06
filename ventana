@@ -77,6 +77,37 @@ public class Ventana extends JFrame{
 		buscador.setFont(new Font("arial", Font.BOLD, 20)); //
 		panel.add(buscador);
 		
+		// Panel de busqueda
+		//Mujer
+		JButton modaMujer = new JButton();
+		modaMujer.setText("Moda Mujer");
+		modaMujer.setBounds(880,30,150,50);
+		modaMujer.setForeground(Color.BLUE);
+		modaMujer.setFont(new Font("arial", Font.BOLD, 20)); //
+		panel.add(modaMujer);
+		//Hombre
+		JButton modaHombre = new JButton();
+		modaHombre.setText("Moda Hombre");
+		modaHombre.setBounds(730,30,150,50);
+		modaHombre.setForeground(Color.BLUE);
+		modaHombre.setFont(new Font("arial", Font.BOLD, 20)); //
+		panel.add(modaHombre);
+		//Invierno
+		JButton Invierno = new JButton();
+		Invierno.setText("Invierno");
+		Invierno.setBounds(580,30,150,50);
+		Invierno.setForeground(Color.BLUE);
+		Invierno.setFont(new Font("arial", Font.BOLD, 20)); //
+		panel.add(Invierno);
+		//Verano
+		JButton Verano = new JButton();
+		Verano.setText("Verano");
+		Verano.setBounds(430,30,150,50);
+		Verano.setForeground(Color.BLUE);
+		Verano.setFont(new Font("arial", Font.BOLD, 20)); //
+		panel.add(Verano);
+		
+		
 		//Ropa comprar en Portada
 		JButton ropa1 = new JButton();
 		ropa1.setBounds(150,200,400,300);
