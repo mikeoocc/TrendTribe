@@ -3,6 +3,9 @@ import Tienda.*;
 import Usuario.*;
 import Transacciones.*;
 import java.util.Scanner;
+
+import Interfaz.Ventana;
+
 import java.util.ArrayList;
 
 public class ClaseMain {
@@ -10,6 +13,12 @@ public class ClaseMain {
 	public static void main(String [] args) {
 		
 		Catalogo catalogo = new Catalogo();
+		
+		Ventana v1 = new Ventana(catalogo);
+		v1.setVisible(true);
+		
+		/*
+
 		Scanner scanner = new Scanner(System.in);
 		String buscador;
 		
@@ -32,6 +41,6 @@ public class ClaseMain {
 				System.out.println(" - " + proc.getNombre() + ": " + proc.getPrecio() + " €");
 			}
 		}
-		
+		*/
 	}
 }
