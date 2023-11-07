@@ -100,7 +100,7 @@ public class VentanaUsuario extends JFrame {
         JButton botonRegistro = new JButton("Registrarse");
         botonRegistro.setBounds(150, 250, 200, 40);
         botonRegistro.setForeground(Color.BLUE);
-        botonRegistro.setBackground(Color.GREEN);
+        botonRegistro.setBackground(Color.WHITE);
         botonRegistro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
