@@ -16,6 +16,8 @@ public class ClaseMain {
 		
 		Ventana v1 = new Ventana(catalogo);
 		v1.setVisible(true);
+		VentanaUsuario v2 = new VentanaUsuario();
+		v2.setVisible(false);
 		
 		/*
 
