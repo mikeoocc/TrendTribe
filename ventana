@@ -1,21 +1,25 @@
-package ventanas;
+package Interfaz;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Image;
+import java.awt.*;
+import javax.swing.*;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
+import Tienda.*;
 
+import java.util.ArrayList;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class Ventana extends JFrame{
+	
 	public JPanel panel;
-	public Ventana() {
+	private Catalogo catalogo;
+	
+	public Ventana(Catalogo catalogo) {
+		
+		this.catalogo = catalogo;
+		
 		setBounds(200,20,1500,1000); //tamaño ventana y posición en pantalla
 		setTitle("https://www.TrendTribe.es/home/"); //titulo
 		this.getContentPane().setBackground(Color.gray);
@@ -68,13 +72,35 @@ public class Ventana extends JFrame{
 		panel.add(usuario);
 		
 		//Buscador
-		JButton buscador= new JButton();
+		JButton buscador= new JButton("Busc");
 		buscador.setBounds(1030,30,100,50);
 		ImageIcon lupa = new ImageIcon("lupa.png");
 		buscador.setIcon(new ImageIcon
 				(lupa.getImage().getScaledInstance(buscador.getWidth(), buscador.getHeight(), Image.SCALE_SMOOTH)));
 		buscador.setForeground(Color.BLUE);
 		buscador.setFont(new Font("arial", Font.BOLD, 20)); //
+		buscador.addActionListener(new ActionListener() {
+		    
+			@Override
+		    public void actionPerformed(ActionEvent e) {
+		    	String filtro = JOptionPane.showInputDialog(Ventana.this, "Buscador:", "", JOptionPane.PLAIN_MESSAGE);
+		    	if (filtro != null && !filtro.isEmpty()) {
+		    	    ArrayList<Producto> productosEncontrados = catalogo.buscarProductos(filtro);
+		    	    if (!productosEncontrados.isEmpty()) {
+		    	        // Mostrar los resultados en una nueva ventana
+		    	        StringBuilder resultado = new StringBuilder("Resultados de la búsqueda:\n");
+		    	        for (Producto producto : productosEncontrados) {
+		    	            
+		    	            resultado.append(producto.getNombre()).append(" - ").append(producto.getPrecio()).append("€").append("\n");
+		    	        }
+		    	        JOptionPane.showMessageDialog(Ventana.this, resultado.toString(), "", JOptionPane.INFORMATION_MESSAGE);
+		    	    } else {
+		    	        JOptionPane.showMessageDialog(Ventana.this, "No se encontraron productos para el término de búsqueda.", "Sin resultados", JOptionPane.INFORMATION_MESSAGE);
+		    	    }
+		    	}
+		    }
+		});
+		
 		panel.add(buscador);
 		
 		// Panel de busqueda
