@@ -19,66 +19,66 @@ public class Catalogo {
         
 		// Información de conexión a la base de datos MySQL
 		String url = "jdbc:mysql://localhost:3306/TrendTribe";
-        String usuario = "root";
-        String pass = "19102023";
+        	String usuario = "root";
+        	String pass = "19102023";
         
-        try {
-            conex = DriverManager.getConnection(url, usuario, pass);
-
-            // Consulta SQL para obtener los productos de la base de datos
-            String sql = "SELECT * FROM Productos";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-         // Recorre los resultados de la consulta y crea objetos Producto
-            while (resultSet.next()) {
-                String tipo = resultSet.getString("tipo");
-                Producto producto = null;
-
-                if ("Ropa".equals(tipo)) {
-                    producto = new Ropa(
-                        resultSet.getString("nombre"),
-                        resultSet.getDouble("precio"),
-                        resultSet.getString("categoria"),
-                        resultSet.getString("marca"),
-                        resultSet.getInt("cantidad"),
-                        resultSet.getString("tipo"),
-                        resultSet.getString("talla"),
-                        resultSet.getString("color")
-                    );
-                } 
-                
-                else if ("Zapatos".equals(tipo)) {
-                    producto = new Zapatos(
-                        resultSet.getString("nombre"),
-                        resultSet.getDouble("precio"),
-                        resultSet.getString("categoria"),
-                        resultSet.getString("marca"),
-                        resultSet.getInt("cantidad"),
-                        resultSet.getString("tipo"),
-                        resultSet.getString("estilo"),
-                        resultSet.getInt("numeroPie")
-                    ); 
-                }
-
-                listaProductos.add(producto);
-            }
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-            
-        } finally {
-            // Cierra la conexión a la base de datos
-            
         	try {
-                if (conex != null) {
-                    conex.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            		conex = DriverManager.getConnection(url, usuario, pass);
+
+            		// Consulta SQL para obtener los productos de la base de datos
+            		String sql = "SELECT * FROM Productos";
+            		PreparedStatement preparedStatement = conex.prepareStatement(sql);
+            		ResultSet resultSet = preparedStatement.executeQuery();
+
+         		// Recorre los resultados de la consulta y crea objetos Producto
+            		while (resultSet.next()) {
+                		String tipo = resultSet.getString("tipo");
+                		Producto producto = null;
+
+                		if ("Ropa".equals(tipo)) {
+                    			producto = new Ropa(
+                        		resultSet.getString("nombre"),
+                        		resultSet.getDouble("precio"),
+                        		resultSet.getString("categoria"),
+                        		resultSet.getString("marca"),
+                        		resultSet.getInt("cantidad"),
+                        		resultSet.getString("tipo"),
+                        		resultSet.getString("talla"),
+                        		resultSet.getString("color")
+                    			);
+                		} 
+                
+               			else if ("Zapatos".equals(tipo)) {
+                    			producto = new Zapatos(
+                        		resultSet.getString("nombre"),
+                        		resultSet.getDouble("precio"),
+                        		resultSet.getString("categoria"),
+                        		resultSet.getString("marca"),
+                        		resultSet.getInt("cantidad"),
+                        		resultSet.getString("tipo"),
+                        		resultSet.getString("estilo"),
+                        		resultSet.getInt("numeroPie")
+                    			); 
+                		}
+
+                		listaProductos.add(producto);
+            		}
+            
+        	} catch (SQLException e) {
+            		e.printStackTrace();
+            
+        	} finally {
+            		// Cierra la conexión a la base de datos
+            
+        		try {
+                		if (conex != null) {
+                    		conex.close();
+                		}
+            		} catch (SQLException e) {
+               		 e.printStackTrace();
+            		}
         
-        }
+        	}
         
 	}
 	
