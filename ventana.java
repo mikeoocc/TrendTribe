@@ -1,4 +1,4 @@
-package ventanas;
+package Interfaz;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -18,12 +18,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import java.util.ArrayList;
+import Tienda.*;
 
 public class Ventana extends JFrame {
     public JPanel panel;
     private JPanel panelDesplegable;
+    private Catalogo catalogo;
     
-    public Ventana() {
+    public Ventana(Catalogo catalogo) {
+    	
+    	this.catalogo = catalogo;
+    	
         setBounds(200, 20, 1500, 1000);
         setTitle("TrendTribe.es");
         this.getContentPane().setBackground(new Color(51, 153, 255)); // Azul claro
@@ -66,7 +72,7 @@ public class Ventana extends JFrame {
 
     private void colocarBotones() {
     	//Menú
-    	JButton menuDesplegable = new JButton("Listo para comprar?? Echa un vistazo a nuestra variedad");
+    	JButton menuDesplegable = new JButton("Explora la variedad de estilos");
         menuDesplegable.setBounds(430, 30, 600, 50);
         menuDesplegable.setForeground(new Color(51, 153, 255)); // Azul claro
         menuDesplegable.setFont(new Font("Arial", Font.BOLD, 20));
@@ -171,7 +177,28 @@ public class Ventana extends JFrame {
 		buscador.setIcon(new ImageIcon
 				(lupa.getImage().getScaledInstance(buscador.getWidth(), buscador.getHeight(), Image.SCALE_SMOOTH)));
 		buscador.setForeground(Color.BLUE);
-		buscador.setFont(new Font("Arial", Font.BOLD, 24)); //
+		buscador.setFont(new Font("Arial", Font.BOLD, 24));
+		buscador.addActionListener(new ActionListener() {
+		    
+			@Override
+		    public void actionPerformed(ActionEvent e) {
+		    	String filtro = JOptionPane.showInputDialog(Ventana.this, "Buscador:", "", JOptionPane.PLAIN_MESSAGE);
+		    	if (filtro != null && !filtro.isEmpty()) {
+		    	    ArrayList<Producto> productosEncontrados = catalogo.buscarProductos(filtro);
+		    	    if (!productosEncontrados.isEmpty()) {
+		    	        // Mostrar los resultados en una nueva ventana
+		    	        StringBuilder resultado = new StringBuilder("Resultados de la búsqueda:\n");
+		    	        for (Producto producto : productosEncontrados) {
+		    	            
+		    	            resultado.append(producto.getNombre()).append(" - ").append(producto.getPrecio()).append("€").append("\n");
+		    	        }
+		    	        JOptionPane.showMessageDialog(Ventana.this, resultado.toString(), "", JOptionPane.INFORMATION_MESSAGE);
+		    	    } else {
+		    	        JOptionPane.showMessageDialog(Ventana.this, "No se encontraron productos para el término de búsqueda.", "Sin resultados", JOptionPane.INFORMATION_MESSAGE);
+		    	    }
+		    	}
+		    }
+		});
 		panel.add(buscador);
 		
 		
@@ -203,4 +230,3 @@ public class Ventana extends JFrame {
 	}
 
 }
-
