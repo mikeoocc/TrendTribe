@@ -114,7 +114,7 @@ public class VentanaRegistro extends JFrame {
                 // Aquí puedes realizar el proceso de registro, recopilando los datos de los campos
                 // y realizando la validación correspondiente
                 String nombre = campoNombre.getText();
-                String apellido = campoApellido.getText();
+                String apellido = campoContraseña.getText();
                 String correo = campoCorreo.getText();
                 String telefono = campoTelefono.getText();
                 String direccion = campoDireccion.getText();
