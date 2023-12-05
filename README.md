@@ -3,6 +3,8 @@
 #### Integrantes:
 Javier Revilla Sáez y Miguel Oliver Cascales.
 
+#### Desarrollado en NetBeans, conectado a MySQL
+
 #### Funcionalidad:
 La aplicación es una plataforma de comercio electrónico que permitirá:
 
@@ -19,12 +21,9 @@ En adición a las anteriores funciones, el código mostrado también cumplirá c
 * Almacenamiento de la información de los usuarios y sus pedidos.
 
 
-#### Diagrama UML de clases preliminar:
+#### Diagrama UML de clases:
 
 ![UML DIAGRAM](https://github.com/Javotass/TrendTribe/assets/109975652/bf80cea2-f601-4e53-a4f7-035ebe01577f)
 
 
-#### Boceto de la página principal: 
-
-![BOCETO](https://github.com/Javotass/TrendTribe/assets/109975652/f3c72c84-0d64-4905-9533-0664b19ea141)
 
