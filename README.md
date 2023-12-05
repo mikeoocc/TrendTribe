@@ -22,8 +22,10 @@ En adición a las anteriores funciones, el código mostrado también cumplirá c
 
 
 #### Diagrama UML de clases:
+No incluye los métodos generados por el diseñador del IDE (mouseClicked, mouseEntered...)
 
-![UML DIAGRAM](https://github.com/Javotass/TrendTribe/assets/109975652/bf80cea2-f601-4e53-a4f7-035ebe01577f)
+![DiagramaUML](https://github.com/Javotass/TrendTribe/assets/109975652/6b702621-1608-4b50-adae-92f303abea3f)
+
 
 
 
